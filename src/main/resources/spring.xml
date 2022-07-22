@@ -5,24 +5,28 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="triangle" class="spring.core.iTransform.Triangle" >
-        <property name="pointA" ref="Point1" />
-        <property name="pointB" ref="Point2" />
-        <property name="pointC" ref="Point3" />
+        <property name="points">
+            <list>
+                <ref bean="Point1" />
+                <ref bean="Point2" />
+                <ref bean="Point3" />
+            </list>
+        </property>
     </bean>
 
     <bean id="Point1" class="spring.core.iTransform.Point" >
         <property name="x" value="0"/>
-        <property name="y" value="0"/>
+        <property name="y" value="4"/>
     </bean>
 
     <bean id="Point2" class="spring.core.iTransform.Point" >
         <property name="x" value="-20"/>
-        <property name="y" value="0"/>
+        <property name="y" value="6"/>
     </bean>
 
     <bean id="Point3" class="spring.core.iTransform.Point" >
         <property name="x" value="20"/>
-        <property name="y" value="0"/>
+        <property name="y" value="9"/>
     </bean>
 
 </beans>

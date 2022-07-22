@@ -1,38 +1,22 @@
 package spring.core.iTransform;
 
+import java.util.List;
+
 public class Triangle {
 
-    private Point pointA;
-    private Point pointB;
-    private Point pointC;
+    private List<Point> points;
 
-    public Point getPointA() {
-        return pointA;
+    public List<Point> getPoints() {
+        return points;
     }
 
-    public void setPointA(Point pointA) {
-        this.pointA = pointA;
-    }
-
-    public Point getPointB() {
-        return pointB;
-    }
-
-    public void setPointB(Point pointB) {
-        this.pointB = pointB;
-    }
-
-    public Point getPointC() {
-        return pointC;
-    }
-
-    public void setPointC(Point pointC) {
-        this.pointC = pointC;
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
 
     public void draw() {
-        System.out.println("point A: X = " + getPointA().getX() + " Y = " + getPointA().getY());
-        System.out.println("point A: X = " + getPointB().getX() + " Y = " + getPointB().getY());
-        System.out.println("point A: X = " + getPointC().getX() + " Y = " + getPointC().getY());
+        for (Point point: points) {
+            System.out.println("point A: X = " + point.getX() + " Y = " + point.getY());
+        }
     }
 }
