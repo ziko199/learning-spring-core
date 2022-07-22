@@ -4,7 +4,18 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="spring.core.iTransform.Triangle" autowire="byName"/>
+    <bean id="parentTriangle" class="spring.core.iTransform.Triangle">
+        <property name="pointA" ref="pointA" />
+    </bean>
+
+    <bean id="triangle1" class="spring.core.iTransform.Triangle" parent="parentTriangle">
+        <property name="pointB" ref="pointB" />
+        <property name="pointC" ref="pointC" />
+    </bean>
+
+    <bean id="triangle2" class="spring.core.iTransform.Triangle" parent="parentTriangle">
+        <property name="pointB" ref="pointB" />
+    </bean>
 
     <bean id="pointA" class="spring.core.iTransform.Point" >
         <property name="x" value="0"/>
