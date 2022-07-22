@@ -8,13 +8,9 @@
         <property name="pointA" ref="pointA" />
     </bean>
 
-    <bean id="triangle1" class="spring.core.iTransform.Triangle" parent="parentTriangle">
+    <bean id="triangle1" class="spring.core.iTransform.Triangle" parent="parentTriangle" init-method="myInit" destroy-method="clean">
         <property name="pointB" ref="pointB" />
         <property name="pointC" ref="pointC" />
-    </bean>
-
-    <bean id="triangle2" class="spring.core.iTransform.Triangle" parent="parentTriangle">
-        <property name="pointB" ref="pointB" />
     </bean>
 
     <bean id="pointA" class="spring.core.iTransform.Point" >
