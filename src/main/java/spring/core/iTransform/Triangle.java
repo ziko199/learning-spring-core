@@ -63,8 +63,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
     // BeanNameAware
     @Override
     public void setBeanName(String beanName) {
-        System.out.println("Override Method setBeanName");
-        System.out.println("Bean name is: " + beanName);
+        System.out.println("Override Method setBeanName Bean name is: " + beanName);
         this.beanName = beanName;
     }
 
