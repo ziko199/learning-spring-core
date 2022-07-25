@@ -7,7 +7,7 @@ public class DrawingApp {
 
     public static void main(String[] args) {
 
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("springRequiredAnnotation.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("springAutowiredAnnotation.xml");
         context.registerShutdownHook();
         Shape shape = (Shape) context.getBean("circle");
         shape.draw();
