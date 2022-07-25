@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="triangle" class="spring.core.iTransform.Triangle">
+        <property name="pointA" ref="pointA" />
+        <property name="pointB" ref="pointB" />
+        <property name="pointC" ref="pointC" />
+    </bean>
+
+    <bean id="pointA" class="spring.core.iTransform.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="4"/>
+    </bean>
+
+    <bean id="pointB" class="spring.core.iTransform.Point">
+        <property name="x" value="-20"/>
+        <property name="y" value="6"/>
+    </bean>
+
+    <bean id="pointC" class="spring.core.iTransform.Point">
+        <property name="x" value="20"/>
+        <property name="y" value="9"/>
+    </bean>
+
+    <bean id="circle" class="spring.core.iTransform.Circle">
+        <property name="center" ref="pointA" />
+    </bean>
+</beans>

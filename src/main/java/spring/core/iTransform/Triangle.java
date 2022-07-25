@@ -1,7 +1,7 @@
 package spring.core.iTransform;
 
 // implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean
-public class Triangle {
+public class Triangle implements Shape {
 
     private Point pointA;
     private Point pointB;
@@ -34,6 +34,7 @@ public class Triangle {
     }
 
     public void draw() {
+        System.out.println("Drawing Triangle: ");
         System.out.println("point A: X = " + getPointA().getX() + " Y = " + getPointA().getY());
         System.out.println("point B: X = " + getPointB().getX() + " Y = " + getPointB().getY());
         System.out.println("point C: X = " + getPointC().getX() + " Y = " + getPointC().getY());
