@@ -1,20 +1,14 @@
 package spring.core.iTransform;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-
-public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean {
+// implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean
+public class Triangle {
 
     private Point pointA;
     private Point pointB;
     private Point pointC;
-    private ApplicationContext applicationContext = null;
-    private String beanName;
-    static int i = 0;
+    //private ApplicationContext applicationContext = null;
+    //private String beanName;
+    //static int i = 0;
     public Point getPointA() {
         return pointA;
     }
@@ -44,7 +38,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
         System.out.println("point B: X = " + getPointB().getX() + " Y = " + getPointB().getY());
         System.out.println("point C: X = " + getPointC().getX() + " Y = " + getPointC().getY());
     }
-
+/**
     public void myInit() {
         System.out.println("calling myInit method from xml");
     }
@@ -53,12 +47,14 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
         System.out.println("calling clean method from xml");
     }
 
+
     // ApplicationContextAware
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("Override Method setApplicationContext");
         this.applicationContext = applicationContext;
     }
+
 
     // BeanNameAware
     @Override
@@ -80,4 +76,6 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
         System.out.println("DisposableBean destroy method called for Triangle " + i + " " + this.beanName);
         i--;
     }
+
+ */
 }

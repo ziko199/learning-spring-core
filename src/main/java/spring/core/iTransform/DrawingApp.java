@@ -7,7 +7,7 @@ public class DrawingApp {
 
     public static void main(String[] args) {
 
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("ForPostProcessor.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("ForBeanFactoryPostProcessor.xml");
         context.registerShutdownHook();
         Triangle triangle = (Triangle) context.getBean("triangle");
         triangle.draw();
