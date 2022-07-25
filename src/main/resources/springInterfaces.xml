@@ -20,7 +20,7 @@
         <property name="y" value="6"/>
     </bean>
 
-    <bean id="pointC" class="spring.core.iTransform.Point">
+    <bean id="center" class="spring.core.iTransform.Point">
         <property name="x" value="20"/>
         <property name="y" value="9"/>
     </bean>

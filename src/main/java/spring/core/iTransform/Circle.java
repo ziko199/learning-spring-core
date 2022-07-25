@@ -1,7 +1,9 @@
 package spring.core.iTransform;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
+
 
 public class Circle implements Shape {
 
@@ -11,8 +13,8 @@ public class Circle implements Shape {
         return center;
     }
 
-    @Autowired
-    @Qualifier("circleRelated")
+
+    @Resource
     public void setCenter(Point center) {
         this.center = center;
     }
@@ -20,5 +22,15 @@ public class Circle implements Shape {
     @Override
     public void draw() {
         System.out.println("Circle: Point is: (" + center.getX() + ", " + center.getY() +")");
+    }
+
+    @PostConstruct
+    public void initializeCircle() {
+        System.out.println("Init method of Circle");
+    }
+
+    @PreDestroy
+    public void destroyCircle() {
+        System.out.println("Destroy method of Circle");
     }
 }
