@@ -1,5 +1,8 @@
 package spring.core.iTransform;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Point {
 
     private int x;
