@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="customerService" class="spring.core.iTransform.AOP.CustomerService" >
+        <property name="name" value="Jouahri" />
+        <property name="url" value="https//jouahri" />
+    </bean>
+
+    <bean id="hijackBeforeMethodBean" class="spring.core.iTransform.AOP.HijackBeforeMethod" />
+    <bean id="hijackAfterMethodBean" class="spring.core.iTransform.AOP.HijackAfterMethod" />
+    <bean id="hijackAroundMethodBean" class="spring.core.iTransform.AOP.HijackAroundMethod" />
+
+    <bean id="customerServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean" >
+        <property name="target" ref="customerService" />
+        <property name="interceptorNames" >
+            <list>
+                <value>hijackBeforeMethodBean</value>
+                <value>hijackAfterMethodBean</value>
+                <value>hijackAroundMethodBean</value>
+
+            </list>
+        </property>
+    </bean>
+
+</beans>
