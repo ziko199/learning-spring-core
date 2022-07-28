@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("aopAnnotation.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("AOP/aopAnnotation.xml");
 
         Operation operation  = (Operation) applicationContext.getBean("operationBean");
 

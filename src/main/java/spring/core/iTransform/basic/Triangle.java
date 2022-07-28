@@ -1,4 +1,4 @@
-package spring.core.iTransform;
+package spring.core.iTransform.basic;
 
 // implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean
 public class Triangle implements Shape {

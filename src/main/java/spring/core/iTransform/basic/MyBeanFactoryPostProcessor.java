@@ -1,4 +1,4 @@
-package spring.core.iTransform;
+package spring.core.iTransform.basic;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;

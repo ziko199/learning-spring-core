@@ -9,21 +9,20 @@
 
     <context:annotation-config/>
 
-    <bean id="circle" class="spring.core.iTransform.Circle" />
-
-    <bean id="pointA" class="spring.core.iTransform.Point">
+    <bean id="pointA" class="spring.core.iTransform.basic.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
 
-    <bean id="pointB" class="spring.core.iTransform.Point">
+    <bean id="pointB" class="spring.core.iTransform.basic.Point">
         <property name="x" value="-20"/>
         <property name="y" value="6"/>
     </bean>
 
-    <bean id="center" class="spring.core.iTransform.Point">
+    <bean id="center" class="spring.core.iTransform.basic.Point">
         <property name="x" value="20"/>
         <property name="y" value="9"/>
     </bean>
 
+    <context:component-scan base-package="spring.core.iTransform" />
 </beans>

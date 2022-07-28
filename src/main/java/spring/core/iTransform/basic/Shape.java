@@ -1,4 +1,4 @@
-package spring.core.iTransform;
+package spring.core.iTransform.basic;
 
 public interface Shape {
 

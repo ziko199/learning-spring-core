@@ -4,28 +4,29 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="parentTriangle" class="spring.core.iTransform.Triangle">
+    <bean id="triangle" class="spring.core.iTransform.basic.Triangle">
         <property name="pointA" ref="pointA" />
-    </bean>
-
-    <bean id="triangle1" class="spring.core.iTransform.Triangle" parent="parentTriangle" init-method="myInit" destroy-method="clean">
         <property name="pointB" ref="pointB" />
         <property name="pointC" ref="pointC" />
     </bean>
 
-    <bean id="pointA" class="spring.core.iTransform.Point" >
-        <property name="x" value="0"/>
-        <property name="y" value="4"/>
+    <bean id="pointA" class="spring.core.iTransform.basic.Point">
+        <property name="x" value="${pointA.pointX}"/>
+        <property name="y" value="${pointA.pointY}"/>
     </bean>
 
-    <bean id="pointB" class="spring.core.iTransform.Point" >
+    <bean id="pointB" class="spring.core.iTransform.basic.Point">
         <property name="x" value="-20"/>
         <property name="y" value="6"/>
     </bean>
 
-    <bean id="pointC" class="spring.core.iTransform.Point" >
+    <bean id="pointC" class="spring.core.iTransform.basic.Point">
         <property name="x" value="20"/>
         <property name="y" value="9"/>
     </bean>
 
+    <bean class="spring.core.iTransform.basic.MyBeanFactoryPostProcessor" />
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+        <property name="location" value="pointsconfig.properties" />
+    </bean>
 </beans>
